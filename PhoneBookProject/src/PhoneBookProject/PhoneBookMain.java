@@ -38,13 +38,10 @@ public class PhoneBookMain {
 			choice = menu();
 			switch (choice) {
 			case 1:
-				// Breaks when you try to update something...
-				// Revision in progress, currently prints data location instead of actual data
 				System.out.println("List of people:\n_________________________");
 				d1.printAlphabetically(d1.getDirectory());
 				break;
 			case 2:
-				// Works!
 				System.out.println("Enter info separated by commas: Ex: Name, Street Address, City, State, Zip, Phone Number");
 				String addedPerson = input.nextLine();
 				String[] tempInfo = addedPerson.split(", ");
@@ -74,66 +71,55 @@ public class PhoneBookMain {
 				d1.addPerson(pNew);
 				break;
 			case 3:
-				// MOSTLY works.
 				System.out.println("How do you want to search?");
 				
 				while (searchChoice != 9) {
 					searchChoice = searchMenu();
 					switch (searchChoice) {
 					case 1:
-						// Works!
 						System.out.println("Enter first name.");
 						String searchedFirstName = input.next();
 						d1.printPersonArray(d1.getByFirstName(searchedFirstName));
 						break;
 					case 2:
-						// Works!
 						System.out.println("Enter last name.");
 						String searchedLastName = input.next();
 						d1.printPersonArray(d1.getByLastName(searchedLastName));
 						break;
 					case 3:
-						// Works!
 						System.out.println("Enter full name.");
 						String searchedFull = input.nextLine();
 						d1.printPersonArray(d1.getByFullName(searchedFull));
 						break;
 					case 4:
-						// Works!
 						System.out.println("Enter phone number.");
 						long searchedNumber = input.nextLong();
 						d1.getByPhoneNumber(searchedNumber).getPerson(); 
 						break;
 					case 5:
-						// Works!
 						System.out.println("Enter street address.");
 						String searchedStreet = input.next();
 						d1.printPersonArray(d1.getByStreetAddress(searchedStreet));
 						break;
 					case 6:
-						// Works!
 						System.out.println("Enter city.");
 						String searchedCity = input.next();
 						d1.printPersonArray(d1.getByCity(searchedCity));
 						break;
 					case 7:
-						// Works!
 						System.out.println("Enter state.");
 						String searchedState = input.next();
 						d1.printPersonArray(d1.getByState(searchedState));
 						break;
 					case 8:
-						// Works!
 						System.out.println("Enter zip code.");
 						String searchedZipCode = input.next();
 						d1.printPersonArray(d1.getByZipCode(searchedZipCode));
 						break;
 					case 9:
-						// Works!
 						System.out.println("Stepping back!");
 						break;
 					default:
-						// Works!
 						System.out.println("Enter a valid number, please.");
 					}
 				}
@@ -177,55 +163,23 @@ public class PhoneBookMain {
 						d1.getByPhoneNumber(updatingPerson).getAddress().setZipCode(newZipCode);
 						break;
 					case 7:
-						// Works!
 						System.out.println("Stepping back!");
 						break;
 					default:
-						// Works!
 						System.out.println("Enter a valid number.");
 					}
 				}
-//				d1.deletePerson(d1.getByPhoneNumber(updatingPerson));
-//				System.out.println("Enter new information, separated by commas. Ex: Name, Street Address, City, State, Zip, Phone Number");
-//				String updatedPerson = input.nextLine();
-//				String[] updateTempInfo = updatedPerson.split(", ");
-//				String updatedName = updateTempInfo[0];
-//				String updatedStreet = updateTempInfo[1];
-//				String updatedCity = updateTempInfo[2];
-//				String updatedState = updateTempInfo[3];
-//				String updatedZipCode = updateTempInfo[4];
-//				String updatedPhoneNum = updateTempInfo[5];
-//				
-//				//separate name into first and last name
-//				String[] updatedTempName = updatedName.split(" ");
-//				String updatedFirstName = updatedTempName[0];
-//				String updatedLastName = updatedTempName[updatedTempName.length - 1];
-//				
-//				String updatedMiddleName = "";
-//				for(int i = 1; i < updatedTempName.length - 1; i++) {
-//					updatedMiddleName += updatedTempName[i];
-//					if (i != updatedTempName.length - 2) {
-//						updatedMiddleName += " ";
-//					}
-//				}
-//				PhoneBookPerson pUpdated = new PhoneBookPerson(updatedFirstName, updatedMiddleName, updatedLastName, updatedPhoneNum);
-//				pUpdated.addAddress(updatedStreet, updatedCity, updatedState, updatedZipCode);
-//				d1.addPerson(pUpdated);
-//				System.out.println("Update complete.");
 				break;
 			case 5:
-				// Works!
 				System.out.println("Enter the phone number of the entry to delete.");
 				long deletingPerson = input.nextLong();
 				d1.deletePerson(d1.getByPhoneNumber(deletingPerson));
 				System.out.println("Deleted successfully.");
 				break;
 			case 6:
-				// Works!
 				System.out.println("See you!");
 				break;
 			default:
-				// Works!
 				System.out.println("Enter a valid number, please.");
 			}
 		}
